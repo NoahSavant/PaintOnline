@@ -1,0 +1,537 @@
+.jspaint {
+    background: silver
+}
+
+.canvas-area {
+    background: #7b7b7b;
+    border: 1px inset
+}
+
+.canvas-area>canvas {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEW9vb3///8EwsWUAAAADElEQVQI12NoYHAAAAHEAMFJRSpJAAAAAElFTkSuQmCC) repeat;
+    background-size: 8px
+}
+
+* {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    font-smooth: none;
+    -webkit-font-smoothing: none
+}
+
+.selection:after,.textbox:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    outline: 1px dashed #000;
+    box-shadow: 0 0 0 1px #fff
+}
+
+.handle {
+    background: navy
+}
+
+.useless-handle {
+    background: #fff;
+    box-shadow: 1px 1px 0 navy inset
+}
+
+.resize-ghost {
+    outline: 1px dotted #000
+}
+
+.menus *,.menu-popup * {
+    font-family: segoe ui,sans-serif;
+    font-size: 12px
+}
+
+.menu-container {
+    margin-bottom: 1px
+}
+
+.menu-button {
+    padding: 2px 5px;
+    position: relative;
+    outline: 0
+}
+
+.menu-button:hover {
+    box-shadow: 1px 1px 0 #fff inset,-1px -1px 0 #707070 inset
+}
+
+.menu-button:active,.menu-button.active {
+    box-shadow: 1px 1px 0 #707070 inset,-1px -1px 0 #fff inset;
+    top: 1px;
+    left: 1px
+}
+
+.menu-popup:not(.something-else) {
+    display: block;
+    padding: 2px;
+    background: silver;
+    border-top: 1px solid silver;
+    border-left: 1px solid silver;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: 1px 1px 0 #fff inset,-1px -1px 0 #707070 inset
+}
+
+.menu-item {
+    padding: 1px 3px;
+    margin: 2px
+}
+
+.menu-item[disabled] {
+    text-shadow: .8px .8px 0 #fff
+}
+
+.menu-item:focus,.menu-item.active {
+    background: #007;
+    color: #fff;
+    text-shadow: none;
+    outline: 0
+}
+
+.menu-item[disabled] {
+    color: gray
+}
+
+.menu-hr {
+    border: 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid #fff;
+    margin: 0 2px
+}
+
+.menu-hotkey {
+    text-decoration: underline
+}
+
+.status-area {
+    font-family: segoe ui,sans-serif;
+    font-size: 12px;
+    padding: 3px 2px;
+    padding-top: 4px;
+    border-top: 1px solid #7b7b7b;
+    outline: 1px solid #7b7b7b;
+    outline-offset: 1px
+}
+
+.window-content button {
+    margin: 3px;
+    padding: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 0;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    position: relative;
+    background: 0 0;
+    outline: 0
+}
+
+.window-content button:before {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #7b7b7b;
+    border-bottom: 1px solid #7b7b7b
+}
+
+.window-content button:hover:active,.window-content button.pressed,.tool:hover:active,.tool.selected {
+    padding-bottom: 2px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff
+}
+
+.window-content button:hover:active:before,.window-content button.pressed:before,.tool:hover:active:before,.tool.selected:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #7b7b7b;
+    border-left: 1px solid #7b7b7b;
+    border-right: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd
+}
+
+.tool-options {
+    border: 1px solid #fff;
+    border-top-color: #7b7b7b;
+    border-left-color: #7b7b7b
+}
+
+.tool {
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background: 0 0;
+    outline: 0
+}
+
+.tool:before {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #7b7b7b;
+    border-bottom: 1px solid #7b7b7b
+}
+
+.tool:hover:active {
+    padding: 1px;
+    background: 0 0!important
+}
+
+.tool.selected,button.selected,.current-colors {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEW9vb3///8EwsWUAAAADElEQVQI12NoYHAAAAHEAMFJRSpJAAAAAElFTkSuQmCC) repeat
+}
+
+.tools {
+    height: 200px;
+    width: 50px
+}
+
+.current-colors {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
+
+.color-selection {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #7b7b7b;
+    border-bottom: 1px solid #7b7b7b
+}
+
+.color-selection:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #bbb
+}
+
+.current-colors,.color-button {
+    border-top: 1px solid #7b7b7b;
+    border-left: 1px solid #7b7b7b;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb
+}
+
+.swatch:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0
+}
+
+.color-selection:before {
+    left: 1px;
+    top: 1px;
+    right: 1px;
+    bottom: 1px
+}
+
+.color-button:before,.current-colors:before,.swatch.pattern:before {
+    border-left: 1px solid #000;
+    border-top: 1px solid #000
+}
+
+.swatch.pattern:before {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000
+}
+
+.current-colors:after,.color-button:after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -2px;
+    bottom: -2px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff
+}
+
+.component-ghost.dock {
+    outline: 1px solid #000
+}
+
+.component-ghost:not(.dock) {
+    outline: 1px dotted #000
+}
+
+.component-ghost:not(.dock):after,.component-ghost:not(.dock):before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    outline: 1px dotted #000
+}
+
+.component-ghost:not(.dock):after {
+    outline-offset: 1px
+}
+
+.component-ghost:not(.dock):before {
+    outline-offset: 2px
+}
+
+.window {
+    background: silver;
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 2px
+}
+
+.window:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #7b7b7b;
+    border-bottom: 1px solid #7b7b7b
+}
+
+.window>* {
+    margin: 1px
+}
+
+.window-titlebar {
+    background: navy;
+    background: -moz-linear-gradient(left,#000080 0%,#1084d0 100%);
+    background: -webkit-gradient(linear,left top,right top,color-stop(0%,#000080),color-stop(100%,#1084d0));
+    background: -webkit-linear-gradient(left,#000080 0%,#1084d0 100%);
+    background: -o-linear-gradient(left,#000080 0%,#1084d0 100%);
+    background: -ms-linear-gradient(left,#000080 0%,#1084d0 100%);
+    background: linear-gradient(to right,#000080 0%,#1084d0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000080',endColorstr='#1084d0',GradientType=1 );
+    color: #fff;
+    font-family: segoe ui,sans-serif;
+    font-size: 12px
+}
+
+.window-title {
+    padding-left: 2px
+}
+
+.window-close-button {
+    width: 13px;
+    height: 11px
+}
+
+.window-titlebar button {
+    margin: 2px
+}
+
+.window-content {
+    font-family: Arial,sans-serif;
+    font-size: 16px
+}
+
+button {
+    padding: 0;
+    vertical-align: middle;
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    background: silver;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    position: relative
+}
+
+button:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray
+}
+
+button:hover:active,button.pressed,button.selected {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff
+}
+
+button:hover:active:after,button.pressed:after,button.selected:after {
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf
+}
+
+button:before {
+    right: 0;
+    top: -3px
+}
+
+button:hover:active:before,button.pressed:before {
+    right: -1px;
+    top: -2px
+}
+
+button:focus {
+    outline: 1px dotted #000;
+    outline-offset: -4px
+}
+
+.help-window .item {
+    font-family: segoe ui,sans-serif;
+    font-size: 12px;
+    padding: 0 2px
+}
+
+.help-window .item:hover {
+    text-decoration: underline;
+    color: #00f;
+    cursor: pointer
+}
+
+.help-window li:before {
+    background-image: url(../../images/help-icons.png)
+}
+
+.help-window .item.selected {
+    background-color: #00a;
+    color: #fff;
+    outline: 1px dotted #ffa;
+    outline-offset: -1px
+}
+
+input[type=text],input[type=url] {
+    border: 1px solid gray;
+    background: #fff;
+    color: #000
+}
+
+::selection {
+    background-color: navy;
+    color: #fff
+}
+
+::-webkit-scrollbar,::-webkit-scrollbar-thumb,::-webkit-scrollbar-button {
+    width: 16px;
+    height: 16px
+}
+
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-button {
+    background: silver;
+    border-top: 1px solid silver;
+    border-left: 1px solid silver;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: 1px 1px 0 #fff inset,-1px -1px 0 #707070 inset
+}
+
+::-webkit-scrollbar-button:hover:active {
+    border: 1px solid #7b7b7b;
+    box-shadow: none
+}
+
+::-webkit-scrollbar-corner {
+    background: silver
+}
+
+::-webkit-scrollbar-button {
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+::-webkit-scrollbar-button {
+    background-image: url(../../images/arrows.png)
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:disabled {
+    background-position: calc(-24px + 1px) 1px
+}
+
+::-webkit-scrollbar-button:horizontal:increment:disabled {
+    background-position: calc(-36px + 1px) 1px
+}
+
+::-webkit-scrollbar-button:vertical:decrement:disabled {
+    background-position: calc(-12px + 1px) 1px
+}
+
+::-webkit-scrollbar-button:vertical:increment:disabled {
+    background-position: calc(-0px + 1px) 1px
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-position: calc(-24px + 1px) calc(-12px + 1px)
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+    background-position: calc(-36px + 1px) calc(-12px + 1px)
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-position: calc(-12px + 1px) calc(-12px + 1px)
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-position: calc(-0px + 1px) calc(-12px + 1px)
+}
+
+::-webkit-scrollbar {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEW9vb3///8EwsWUAAAADElEQVQI12NoYHAAAAHEAMFJRSpJAAAAAElFTkSuQmCC) repeat
+}
+
+::-webkit-scrollbar-track-piece:active {
+    background: #000
+}
+
+::-webkit-scrollbar-button:start:increment,::-webkit-scrollbar-button:end:decrement {
+    display: none
+}

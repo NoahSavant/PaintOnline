@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PaintOnline HaViKhang</title>
+<link href="styles/normalize.css" rel="stylesheet" type="text/css">
+<link href="styles/layout.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+<link href="styles/print.css" rel="stylesheet" type="text/css" media="print">
+<link rel="icon" href="images/icons/32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/icons/windows.ico" sizes="16x16 32x32 48x48" type="image/icon">
+
+<script type="text/javascript">
+			if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
+				document.write('<script src="https://cdn.polyfill.io/v2/polyfill.min.js"><\/script>');
+
+				document.write('<style>.help-window iframe { height: 100% } .horizontal { flex-shrink: 0; flex-grow: 1; flex-basis: 0; } </style>');
+
+				var last_error_message_time = +new Date;
+				var error_message_debounce_ms = 200;
+				window.onerror = function(){
+					var current_time = +new Date;
+					if(!last_error_message_time || (current_time > last_error_message_time + error_message_debounce_ms)){
+						alert("Internet Explorer is not supported!");
+						last_error_message_time = +new Date;
+					}
+				};
+			}
+</script>
+<script src="src/theme.js"></script>
+
+<style>
+      header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #7b7b7b;
+      }
+
+      header li {
+        float: left;
+      }
+
+      header li a {
+        display: block;
+        color: #000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: 800;
+      }
+
+      header li a:hover:not(.active) {
+        background-color: #ddd;
+      }
+
+      header li a:hover{
+        color: #000;
+      }
+
+      header li a.active {
+        color: white;
+        background-color: #4CAF50;
+      }
+
+      header ul li.right {
+        float:right
+      }
+
+      @media screen and (max-width: 600px) {
+        header ul.topnav li.right,
+        header ul.topnav li {float: none;}
+      }
+
+      .google-auto-placed {
+        margin-top:2rem;
+        margin-bottom: 2rem;
+      }
+    </style>
+</head>
+<body>
+
+<div id="about-paint" style="text-align:center;margin-left: 9%;margin-right: 9%;">
+<h1><img src="images/icons/32.png" /> This is a Paint Online (HaViKhang)</h1>
+<p></p>
+</div>
+<div style="margin-left: 9%;margin-right: 9%;text-align: center;margin-bottom: 2rem;margin-top:2rem">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1063828642699879" data-ad-slot="5505829771" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+</div>
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/pep.js"></script>
+<script src="lib/canvas.toBlob.js"></script>
+<script src="lib/gif.js/gif.js"></script>
+<script src="lib/palette.js"></script>
+<script src="lib/FileSaver.js"></script>
+<script src="lib/font-detective.js"></script>
+<script src="./lib/libtess.min.js"></script>
+<script src="src/helpers.js"></script>
+<script src="src/storage.js"></script>
+<script src="src/$Component.js"></script>
+<script src="src/$Window.js"></script>
+<script src="src/$MenuBar.js"></script>
+<script src="src/$ToolBox.js"></script>
+<script src="src/$ColorBox.js"></script>
+<script src="src/$FontBox.js"></script>
+<script src="src/$Handles.js"></script>
+<script src="src/OnCanvasObject.js"></script>
+<script src="src/Selection.js"></script>
+<script src="src/TextBox.js"></script>
+<script src="src/image-manipulation.js"></script>
+<script src="src/tool-options.js"></script>
+<script src="src/tools.js"></script>
+
+<script src="src/functions.js"></script>
+<script src="src/manage-storage.js"></script>
+<script src="src/imgur.js"></script>
+<script src="src/help.js"></script>
+<script src="src/app.js"></script>
+<script src="src/menus.js"></script>
+<script src="src/canvas-change.js"></script>
+<script src="src/sessions.js"></script>
+<script src="lib/konami.js"></script>
+<script src="src/vaporwave-fun.js"></script>
+<div style="margin-left: 9%;margin-right: 9%;text-align: center;margin-bottom: 2rem;margin-top:2rem">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1063828642699879" data-ad-slot="2197140152" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132328966-1"></script>
+<script>
+      window.addEventListener("load", function () {
+
+        document.addEventListener("scroll", redirect),
+        document.addEventListener("mousemove", redirect),
+        document.addEventListener("mousedown", redirect),
+        document.addEventListener("touchstart", redirect);
+      })
+    </script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-132328966-1');
+    </script>
+</body>
+</html>
